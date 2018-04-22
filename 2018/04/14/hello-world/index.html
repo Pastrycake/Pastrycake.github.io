@@ -22,7 +22,7 @@ Qu...">
   <title>Hello World [ Spotty's Blog ]</title>
   
   
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="/Piggy_Sleep.ico">
   
   
   <link rel="stylesheet" href="/css/random.css">
@@ -198,38 +198,6 @@ Qu...">
       </a>
     </li>
   
-    <li>
-      <a href="https://coding.net/u/Stiekel">
-        
-          <i class="icon iconfont coding">&#xe607;</i>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="https://twitter.com/SidCN">
-        
-          <i class="icon iconfont twitter">&#xe600;</i>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="http://weibo.com/sidcn">
-        
-          <i class="icon iconfont weibo">&#xe602;</i>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="http://www.douban.com/people/Stiekel/">
-        
-          <i class="icon iconfont douban">&#xe60f;</i>
-        
-      </a>
-    </li>
-  
 </ul>
   </div>
 </div>
@@ -278,6 +246,18 @@ var isTriggerAnalytics = !( true && isIgnoreHost );
   // fancybox
   var backgroundImages = [];
   
+    
+      backgroundImages.push('http://7te9fe.com1.z0.glb.clouddn.com/bgimg_1.jpg?imageView2/1/w/__width__/h/__height__');
+    
+      backgroundImages.push('http://7te9fe.com1.z0.glb.clouddn.com/bgimg_2.jpg?imageView2/1/w/__width__/h/__height__');
+    
+      backgroundImages.push('http://7te9fe.com1.z0.glb.clouddn.com/bgimg_3.jpg?imageView2/1/w/__width__/h/__height__');
+    
+      backgroundImages.push('http://7te9fe.com1.z0.glb.clouddn.com/bgimg_4.jpg?imageView2/1/w/__width__/h/__height__');
+    
+      backgroundImages.push('http://7te9fe.com1.z0.glb.clouddn.com/bgimg_5.jpg?imageView2/1/w/__width__/h/__height__');
+    
+  
   $('#post').each(function(i){
     $(this).find('img').each(function(){
       if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
@@ -291,7 +271,7 @@ var isTriggerAnalytics = !( true && isIgnoreHost );
   });
   $(".fancybox").fancybox();
 
-var vegasConfig = {"preload­Image":false,"transition":["slideLeft2","slideRight2","flash2"],"timer":true,"delay":5000,"shuffle":true,"count":28};
+var vegasConfig = {"preloadImage":false,"transition":["slideLeft2","slideRight2","flash2"],"timer":true,"delay":5000,"shuffle":true,"count":28};
 var unsplashConfig = "";
 // is show background images
 var turnoffBackgroundImage = false;
