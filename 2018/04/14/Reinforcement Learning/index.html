@@ -16,7 +16,7 @@
   
   
   
-    <meta name="description" content="####强化学习定义机器学习 (Machine Learning) 问题可以大致划分成四类，有监督学习 (Supervised Learning)， 无监督学习 (Unsupervised Learning)，半监督学习 (Semi-supervised Learning) 以及强化学习 (Reinforcement Learning)。强化学习作为机器学习的一种重要的类型，重点考虑的是一个...">
+    <meta name="description" content="强化学习定义机器学习 (Machine Learning) 问题可以大致划分成四类，有监督学习 (Supervised Learning)， 无监督学习 (Unsupervised Learning)，半监督学习 (Semi-supervised Learning) 以及强化学习 (Reinforcement Learning)。强化学习作为机器学习的一种重要的类型，重点考虑的是一个智能体 ...">
   
   <title>强化学习笔记 [ Spotty's Blog ]</title>
   
@@ -46,15 +46,6 @@
       </div>
     </div>
   
-  
-    <div class="item next">
-      <a href="/2018/04/14/hello-world/">
-        <div class="item-icon"></div>
-      </a>
-      <div class="item-title">
-        Hello World
-      </div>
-    </div>
   
 </div>
 <div id="outer-container" class="hide-area">
@@ -129,15 +120,15 @@
   <article id="post">
     <h1>强化学习笔记</h1>
     <p class="page-title-sub">
-      <span id = "post-title-date">撰写于 2018-04-14</span>
+      <span id = "post-title-date">Created at 2018-04-14</span>
       
-        <span id = "post-title-updated">修改于 2018-05-01</span>
+        <span id = "post-title-updated">Updated at 2018-05-01</span>
       
       
       
     </p>
     
-    <p>####强化学习定义<br>机器学习 (Machine Learning) 问题可以大致划分成四类，有监督学习 (Supervised Learning)， 无监督学习 (Unsupervised Learning)，半监督学习 (Semi-supervised Learning) 以及强化学习 (Reinforcement Learning)。<strong>强化学习作为机器学习的一种重要的类型，重点考虑的是一个智能体 (agent) 如何采取动作 (action) 来作用于环境 (environment)，当采取相应动作时，环境将对所做动作进行反馈一个奖励 (reward)，根据反馈，智能体调整动作的策略来实现收益的最大化。</strong></p>
+    <h4 id="强化学习定义"><a href="#强化学习定义" class="headerlink" title="强化学习定义"></a>强化学习定义</h4><p>机器学习 (Machine Learning) 问题可以大致划分成四类，有监督学习 (Supervised Learning)， 无监督学习 (Unsupervised Learning)，半监督学习 (Semi-supervised Learning) 以及强化学习 (Reinforcement Learning)。<strong>强化学习作为机器学习的一种重要的类型，重点考虑的是一个智能体 (agent) 如何采取动作 (action) 来作用于环境 (environment)，当采取相应动作时，环境将对所做动作进行反馈一个奖励 (reward)，根据反馈，智能体调整动作的策略来实现收益的最大化。</strong></p>
 <center><br><img src="./image/RL.png" width="50%" height=""><br></center>   
 
 <p><strong>基本概念</strong></p>
@@ -147,31 +138,29 @@
 <p>4.奖赏 $R(s,a)$：在状态 $s$ 下执行动作 $a$ 获得的即时奖励，常表示为$R(s,a) = E[R |s,a)$，根据不同的情况，奖赏还可以表示为 $R(s,a,s’)$ (与前后状态以及动作都有关) 以及 $R(s,s’)$ (与动作无关，只与前后状态有关)</p>
 <p>5.策略 $\pi(s|a)$：根据当前的状态 $s$ 来产生动作 $a$，可以表述为确定型 $a=\pi(s)$ 或者是概率型 $\pi(a|s) = P(a|s)$。</p>
 <p>强化学习与有监督学习有一定的对应关系，强化学习中的状态 $s$ 对应着有监督学习中的实例的输入向量/特征向量 $x$, 而其中的动作 $a$ 对应着有监督学习只能够的标记 $y$ ,有监督学习方法是在给定训练样本 $(x,y)$ 这样的特征向量-标记对后，对其训练出一个“分类器”或者“回归预测器”，进而对未知的样本对进行预测。与之不同的是，强化学习并没有显示地给出很明确的标记 $y$，也就是说事先不知道在状态 $s$ 下，执行哪一种决策 $a$ 才是最优的或者说是正确的，不像之前那么直接地告诉机器在什么状态下做什么动作，即不直接给定标记。但是，强化学习有一个反馈的奖赏 $R$ ，这个变量是对给定状态 $s$ 并执行执行动作 $a$ 进行一个相应的评价，而强化学习正是通过让这个奖赏最大化来学习选择最优的动作，只有当看到相应的奖赏，才能“反思”之前的动作是否正确，这在某种意义上来说，<strong>强化学习方法是具有“延迟标记信息”的有监督学习方法。</strong></p>
-<p>####马尔科夫决策过程  (Markov Decision Process, MDP)<br>MDP 简单说就是一个智能体采取行动从而改变自己的状态获得奖励与环境发生交互的循环过程。MDP 的策略完全取决于当前状态 (Only present matters)，这也是它马尔科夫性质的体现。其如下图所示，数学上可以简单表示为 $M = &lt;S,A,P_{s,a},R&gt;$，该模型表示也是强化学习对环境的建模。</p>
+<h4 id="马尔科夫决策过程-Markov-Decision-Process-MDP"><a href="#马尔科夫决策过程-Markov-Decision-Process-MDP" class="headerlink" title="马尔科夫决策过程  (Markov Decision Process, MDP)"></a>马尔科夫决策过程  (Markov Decision Process, MDP)</h4><p>MDP 简单说就是一个智能体采取行动从而改变自己的状态获得奖励与环境发生交互的循环过程。MDP 的策略完全取决于当前状态 (Only present matters)，这也是它马尔科夫性质的体现。其如下图所示，数学上可以简单表示为 $M = &lt;S,A,P_{s,a},R&gt;$，该模型表示也是强化学习对环境的建模。</p>
 <center><br><img src="./image/MDP.png" width="50%" height=""><br></center>
 
-<p>####最大化回报<br>在已知 MDP 过程 $M = &lt;S,A,P,R&gt;$的条件下，考虑多步的强化学习任务，</p>
+<h4 id="最大化回报"><a href="#最大化回报" class="headerlink" title="最大化回报"></a>最大化回报</h4><p>在已知 MDP 过程 $M = &lt;S,A,P,R&gt;$的条件下，考虑多步的强化学习任务，</p>
 
   </article>
   <div class="random-toc-area">
-  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
-  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
   <div class="random-toc">
-    <h2>目录</h2>
-    
+    <h2>Table of Content</h2>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#强化学习定义"><span class="toc-text">强化学习定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#马尔科夫决策过程-Markov-Decision-Process-MDP"><span class="toc-text">马尔科夫决策过程  (Markov Decision Process, MDP)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#最大化回报"><span class="toc-text">最大化回报</span></a></li></ol>
   </div>
 </div>
 
   
 <nav id="pagination">
   
-    <a href="/2018/05/01/LeetCode-Reverse Linked List/" class="prev">&larr; 上一篇 LeetCode题解-206-Reverse Linked List</a>
+    <a href="/2018/05/01/LeetCode-Reverse Linked List/" class="prev">&larr; Prev post LeetCode题解-206-Reverse Linked List</a>
   
 
   
 
-  
-    <a href="/2018/04/14/hello-world/" class="next">下一篇 Hello World &rarr;</a>
   
 </nav>
 
