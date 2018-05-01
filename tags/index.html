@@ -18,7 +18,7 @@
   
     <meta name="description" content="live in thankfulness">
   
-  <title>tags [ Spotty's Blog ]</title>
+  <title> [ Spotty's Blog ]</title>
   
   
     <link rel="shortcut icon" href="/Piggy_Sleep.ico">
@@ -111,7 +111,7 @@
   <article id="page">
     
     
-      <h1 class="center-title">tags</h1>
+      <h1 class="center-title">Tag</h1>
       <div class="tag-cloud-tags">
         <a href="/tags/Link-List/" style="font-size: 16px; color: #999">Link List</a> <a href="/tags/Reinforcement-Learning/" style="font-size: 16px; color: #999">Reinforcement Learning</a>
       </div>
@@ -290,7 +290,24 @@ $(".video-container iframe").each(function(i){
   $(this).parent().html(plyrContainer);
 });
 plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 </html>
 

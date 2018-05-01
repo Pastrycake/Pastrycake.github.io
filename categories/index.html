@@ -18,7 +18,7 @@
   
     <meta name="description" content="live in thankfulness">
   
-  <title>categories [ Spotty's Blog ]</title>
+  <title> [ Spotty's Blog ]</title>
   
   
     <link rel="shortcut icon" href="/Piggy_Sleep.ico">
@@ -111,7 +111,7 @@
   <article id="page">
     
     
-      <h1 class="center-title">categories</h1>
+      <h1 class="center-title">Category</h1>
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode题解/">LeetCode题解</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/强化学习/">强化学习</a><span class="category-list-count">1</span></li></ul>
     
   </article>
@@ -288,7 +288,24 @@ $(".video-container iframe").each(function(i){
   $(this).parent().html(plyrContainer);
 });
 plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 </html>
 
