@@ -1,14 +1,8 @@
 
 
-  
 
 
 
-
-  
-
-
-  
 
 
 <!doctype html>
@@ -22,9 +16,26 @@
   
   
   
-    <meta name="description" content="live in thankfulness">
+    <meta name="description" content="206. Reverse Linked List题目描述: 给定一个链表的头结点head，反转整个链表。
+解决思路：
+
+初始化一个前向结点指针为空 (NULL)，并开始循环
+
+存储当前结点指针指向的后一个结点
+
+让当前结点指向前向结点
+
+让前向结点等于当前结点
+
+让当前结点等于之前存储的后向结点
+
+当前结点为空时停止循环
+
+
+代码
+1234567891011121314class Solut...">
   
-  <title>归档: 4/2018: 2018 [ Spotty's Blog ]</title>
+  <title>LeetCode题解-206-Reverse Linked List [ Spotty's Blog ]</title>
   
   
     <link rel="shortcut icon" href="/Piggy_Sleep.ico">
@@ -43,6 +54,15 @@
 <body>
 <div class="side-navigate hide-area">
   
+  
+    <div class="item next">
+      <a href="/2018/04/14/Reinforcement Learning/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        强化学习笔记
+      </div>
+    </div>
   
 </div>
 <div id="outer-container" class="hide-area">
@@ -68,7 +88,7 @@
           </li>
         
           
-            <li class="active">
+            <li>
           
             <a href="/archives">Archives</a>
             
@@ -114,96 +134,60 @@
     <div id="content-inner">
       
       
-  <article>
-    
-
-  <div id="recent-posts">
-    <h1>归档
-    
-      <span class="posts-count">
-      共
-      2
+  <article id="post">
+    <h1>LeetCode题解-206-Reverse Linked List</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">撰写于 2018-05-01</span>
       
-        文章
-      
-      </span>
-    
-    </h1>
-    
-    
-      
-      
-        
-      
-      
-    
+        <span id = "post-title-updated">修改于 2018-05-01</span>
       
       
       
+    </p>
     
-    
-    
-      
-      
-        
-        <h3 class="archive-year-title">2018
-        
-          <span class="posts-count">
-          共
-          2
-          
-            文章
-          
-          </span>
-        
-        </h3>
-      
-      <div class="post-title-item">
-  
-  <a href="/2018/04/14/Reinforcement Learning/">
-  
-    强化学习笔记
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">4-14</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/2018/04/14/hello-world/">
-  
-    Hello World
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">4-14</span>
-    
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-    
-  </div>
-
-
+    <h4 id="206-Reverse-Linked-List"><a href="#206-Reverse-Linked-List" class="headerlink" title="206. Reverse Linked List"></a>206. Reverse Linked List</h4><p>题目描述: 给定一个链表的头结点head，反转整个链表。</p>
+<p>解决思路：</p>
+<ol>
+<li><p>初始化一个前向结点指针为空 (NULL)，并开始循环</p>
+</li>
+<li><p>存储当前结点指针指向的后一个结点</p>
+</li>
+<li><p>让当前结点指向前向结点</p>
+</li>
+<li><p>让前向结点等于当前结点</p>
+</li>
+<li><p>让当前结点等于之前存储的后向结点</p>
+</li>
+<li><p>当前结点为空时停止循环</p>
+</li>
+</ol>
+<p>代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ListNode* <span class="title">reverseList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        ListNode * pre_node =  <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">while</span>(head)</span><br><span class="line">        &#123;</span><br><span class="line">            ListNode * next_node = head-&gt;next;</span><br><span class="line">            head-&gt;next = pre_node;</span><br><span class="line">            pre_node = head;</span><br><span class="line">            head = next_node;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> pre_node;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
   </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#206-Reverse-Linked-List"><span class="toc-text">206. Reverse Linked List</span></a></li></ol>
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+
+  
+
+  
+    <a href="/2018/04/14/Reinforcement Learning/" class="next">下一篇 强化学习笔记 &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
 
       
       
@@ -323,6 +307,8 @@ var unsplashConfig = "";
 var turnoffBackgroundImage = false;
 
 
+
+  turnoffBackgroundImage = true;
 
 
 var backgroundColor = "FFFFFF";
